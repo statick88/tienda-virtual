@@ -1,7 +1,8 @@
 from django.db import models
 
 class Cliente(models.Model):
-    documento_detalle = models.IntegerField(verbose_name='Número de documento', unique=True)
+    documento = models.CharField(max_length=20, choices=[('cédula', 'Cédula'), ('ruc', 'RUC'), ('pasaporte', 'Pasaporte')])  # Adjust the max_length for the documento field
+    documento_detalle = models.IntegerField(default=1000000000, verbose_name='Número de cédula')
     nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
     dirección = models.CharField(max_length=100)
@@ -13,9 +14,11 @@ class Cliente(models.Model):
 
 class Producto(models.Model):
     código = models.IntegerField(primary_key=True)
+    descripción = models.CharField(max_length=50)
     nombre = models.CharField(max_length=50)
     precio = models.FloatField()
     stock = models.IntegerField()
+    imagen = models.ImageField(upload_to='productos', null=True)
 
     def __str__(self):
         return self.nombre
