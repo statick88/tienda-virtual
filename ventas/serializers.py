@@ -5,6 +5,7 @@ class ClienteSerializer(serializers.ModelSerializer):
     class Meta:
         model = Cliente
         fields = '__all__'
+        #fields = ['id', 'nombre', 'apellido', 'telefono']
 
 class ProductoSerializer(serializers.ModelSerializer):
     class Meta:

@@ -111,3 +111,5 @@ Correr el Servidor
 ``` bash
 python manage.py runserver
 ```
+
+[Documentacion de DJangoRest in your API](https://drf-yasg.readthedocs.io/en/stable/readme.html#installation)
