@@ -3,7 +3,6 @@ from django.db import models
 class Cliente(models.Model):
     documento = models.CharField(max_length=20, choices=[('cédula', 'Cédula'), ('ruc', 'RUC'), ('pasaporte', 'Pasaporte')])  # Adjust the max_length for the documento field
     documento_detalle = models.IntegerField(default=1000000000, verbose_name='Número de cédula')
-    nombre = models.CharField(max_length=50)
     apellido = models.CharField(max_length=50)
     dirección = models.CharField(max_length=100)
     teléfono = models.IntegerField()
